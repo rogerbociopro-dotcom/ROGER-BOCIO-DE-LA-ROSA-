@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { ActiveTab } from '../types';
-import { Sparkles, Briefcase, Award, ShieldAlert, History, Upload, Camera } from 'lucide-react';
+import { Sparkles, Briefcase, Award, ShieldAlert, History, Upload, Camera, RotateCcw } from 'lucide-react';
 import { TEAM_DATA, TIMELINE_DATA } from '../data';
 
 interface ViewNosotrosProps {
@@ -8,7 +8,17 @@ interface ViewNosotrosProps {
 }
 
 export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
-  const [team, setTeam] = useState(TEAM_DATA);
+  const [team, setTeam] = useState(() => {
+    const saved = localStorage.getItem('juleonix_team_data');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error('Error loading team data from localStorage:', e);
+      }
+    }
+    return TEAM_DATA;
+  });
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const fileInputsRef = useRef<{ [key: string]: HTMLInputElement | null }>({});
 
@@ -20,12 +30,29 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
     const reader = new FileReader();
     reader.onload = (e) => {
       if (e.target?.result) {
-        setTeam(prev => prev.map(member => 
-          member.id === id ? { ...member, avatar: e.target!.result as string } : member
-        ));
+        const base64Src = e.target.result as string;
+        setTeam(prev => {
+          const updated = prev.map(member => 
+            member.id === id ? { ...member, avatar: base64Src } : member
+          );
+          localStorage.setItem('juleonix_team_data', JSON.stringify(updated));
+          return updated;
+        });
       }
     };
     reader.readAsDataURL(file);
+  };
+
+  const handleResetAvatar = (id: string) => {
+    const originalMember = TEAM_DATA.find(m => m.id === id);
+    if (!originalMember) return;
+    setTeam(prev => {
+      const updated = prev.map(member => 
+        member.id === id ? { ...member, avatar: originalMember.avatar } : member
+      );
+      localStorage.setItem('juleonix_team_data', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   return (
@@ -213,6 +240,21 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
                       <p className="font-sans text-[8px] text-zinc-400 font-light text-center px-4 max-w-xs leading-tight">
                         Suelte su archivo o haga clic para buscar
                       </p>
+                      
+                      {/* Restore Initial / Default Button */}
+                      {member.avatar !== TEAM_DATA.find(m => m.id === member.id)?.avatar && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleResetAvatar(member.id);
+                          }}
+                          className="mt-2.5 px-2 py-1 rounded bg-zinc-950 border border-zinc-800 hover:bg-zinc-900 text-[9px] font-mono text-zinc-300 hover:text-white flex items-center gap-1 transition-all pointer-events-auto"
+                        >
+                          <RotateCcw className="h-3 w-3 text-pink-500" />
+                          <span>RESTAURAR DEFAULT</span>
+                        </button>
+                      )}
                     </div>
                   </div>
 
