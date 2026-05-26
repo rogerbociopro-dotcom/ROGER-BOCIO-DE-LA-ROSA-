@@ -1,6 +1,6 @@
 {
   "name": "Juleonix Digital",
-  "description": "Replica de alta precisión de la plataforma interactiva de Juleonix Digital, que sincroniza tecnología, flujos de datos corporativos, soporte express, asistencia virtual y automatización.",
+  "description": "Consultora de operatividad tecnológica, asistencia virtual avanzada y automatización de procesos para escalar la productividad empresarial.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
