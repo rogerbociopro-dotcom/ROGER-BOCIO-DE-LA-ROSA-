@@ -1,6 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { ActiveTab } from '../types';
-import { Sparkles, Briefcase, Award, ShieldAlert, History, Upload, Camera, RotateCcw } from 'lucide-react';
 import { TEAM_DATA, TIMELINE_DATA } from '../data';
 
 interface ViewNosotrosProps {
@@ -8,52 +7,7 @@ interface ViewNosotrosProps {
 }
 
 export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
-  const [team, setTeam] = useState(() => {
-    const saved = localStorage.getItem('juleonix_team_data');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error('Error loading team data from localStorage:', e);
-      }
-    }
-    return TEAM_DATA;
-  });
-  const [draggingId, setDraggingId] = useState<string | null>(null);
-  const fileInputsRef = useRef<{ [key: string]: HTMLInputElement | null }>({});
-
-  const handlePhotoUpload = (id: string, file: File) => {
-    if (!file.type.startsWith('image/')) {
-      alert('Por favor, seleccione un formato de imagen válido (PNG, JPG, JPEG, WebP).');
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      if (e.target?.result) {
-        const base64Src = e.target.result as string;
-        setTeam(prev => {
-          const updated = prev.map(member => 
-            member.id === id ? { ...member, avatar: base64Src } : member
-          );
-          localStorage.setItem('juleonix_team_data', JSON.stringify(updated));
-          return updated;
-        });
-      }
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleResetAvatar = (id: string) => {
-    const originalMember = TEAM_DATA.find(m => m.id === id);
-    if (!originalMember) return;
-    setTeam(prev => {
-      const updated = prev.map(member => 
-        member.id === id ? { ...member, avatar: originalMember.avatar } : member
-      );
-      localStorage.setItem('juleonix_team_data', JSON.stringify(updated));
-      return updated;
-    });
-  };
+  const [team] = useState(TEAM_DATA);
 
   return (
     <div className="space-y-20 py-10" id="view-nosotros-root">
@@ -167,98 +121,24 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
 
         {/* Profiles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="team-profiles-grid">
-          {team.map((member) => {
-            const isDragging = draggingId === member.id;
-            return (
+          {team.map((member) => (
               <div 
                 key={member.id}
-                className={`group relative rounded-2xl border bg-zinc-950/60 p-5 flex flex-col justify-between hover:border-cyan-500/25 transition-all duration-350 ${
-                  isDragging ? 'border-[#00f0ff]/60 bg-cyan-950/5' : 'border-zinc-900'
-                }`}
-                onDragOver={(e) => {
-                  e.preventDefault();
-                  setDraggingId(member.id);
-                }}
-                onDragLeave={() => setDraggingId(null)}
-                onDrop={(e) => {
-                  e.preventDefault();
-                  setDraggingId(null);
-                  const file = e.dataTransfer.files?.[0];
-                  if (file) handlePhotoUpload(member.id, file);
-                }}
+                className="group relative rounded-2xl border border-zinc-900 bg-zinc-950/60 p-5 flex flex-col justify-between hover:border-cyan-500/25 transition-all duration-350"
               >
                 <div className="space-y-4">
                   
-                  {/* Aspect-Ratio Photo Upload Space */}
-                  <div 
-                    onClick={() => fileInputsRef.current[member.id]?.click()}
-                    className={`relative aspect-[4/3] w-full rounded-xl bg-zinc-900/60 border-2 border-dashed flex flex-col items-center justify-center cursor-pointer overflow-hidden select-none transition-all duration-300 ${
-                      isDragging 
-                        ? 'border-[#00f0ff] bg-cyan-950/15' 
-                        : 'border-zinc-800/80 hover:border-cyan-500/35 group-hover:bg-zinc-900/90'
-                    }`}
-                    title="Arrastre una foto o haga clic para seleccionarla"
-                    id={`photo-upload-space-${member.id}`}
-                  >
-                    <input 
-                      type="file"
-                      ref={(el) => (fileInputsRef.current[member.id] = el)}
-                      className="hidden"
-                      accept="image/*"
-                      onChange={(e) => {
-                        const file = e.target.files?.[0];
-                        if (file) handlePhotoUpload(member.id, file);
-                      }}
+                  {/* Photo Space - STATIC */}
+                  <div className="relative aspect-[4/3] w-full rounded-xl bg-zinc-900/60 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={member.avatar} 
+                      alt={member.name} 
+                      className="h-full w-full object-cover transition-transform duration-500" 
+                      referrerPolicy="no-referrer"
                     />
-
-                    {member.avatar ? (
-                      <img 
-                        src={member.avatar} 
-                        alt={member.name} 
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                        referrerPolicy="no-referrer"
-                      />
-                    ) : (
-                      <div className="text-center space-y-2 p-4">
-                        <div className="h-12 w-12 rounded-full mx-auto bg-gradient-to-tr from-[#151528] to-[#251025] flex items-center justify-center font-display text-base font-bold text-white">
-                          {member.initials}
-                        </div>
-                        <p className="font-mono text-[9px] text-zinc-500 font-bold uppercase tracking-wider">
-                          Sin foto cargada
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Interactive Hover Cover conforming to Drag & Drop upload specs */}
-                    <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-1.5 transition-all duration-300">
-                      <div className="h-8 w-8 rounded-full bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-[#00f0ff] animate-pulse">
-                        <Upload className="h-4 w-4" />
-                      </div>
-                      <span className="font-mono text-[9px] font-bold text-white tracking-widest uppercase">
-                        {member.avatar ? 'CAMBIAR FOTO' : 'CARGAR FOTO'}
-                      </span>
-                      <p className="font-sans text-[8px] text-zinc-400 font-light text-center px-4 max-w-xs leading-tight">
-                        Suelte su archivo o haga clic para buscar
-                      </p>
-                      
-                      {/* Restore Initial / Default Button */}
-                      {member.avatar !== TEAM_DATA.find(m => m.id === member.id)?.avatar && (
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleResetAvatar(member.id);
-                          }}
-                          className="mt-2.5 px-2 py-1 rounded bg-zinc-950 border border-zinc-800 hover:bg-zinc-900 text-[9px] font-mono text-zinc-300 hover:text-white flex items-center gap-1 transition-all pointer-events-auto"
-                        >
-                          <RotateCcw className="h-3 w-3 text-pink-500" />
-                          <span>RESTAURAR DEFAULT</span>
-                        </button>
-                      )}
-                    </div>
                   </div>
 
-                  {/* Name and cargo / role placed directly below the photo */}
+                  {/* Name and cargo / role */}
                   <div className="space-y-1 pt-1">
                     <h4 className="font-display text-base font-extrabold text-white tracking-wide group-hover:text-cyan-400 transition-colors">
                       {member.name}
@@ -268,7 +148,7 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
                     </p>
                   </div>
 
-                  {/* Specialty and details below names/cargos */}
+                  {/* Specialty and details */}
                   <div className="border-t border-zinc-900 pt-3 space-y-1">
                     <span className="font-mono text-[8px] text-zinc-500 font-bold tracking-widest uppercase block">
                       ESPECIALIDAD DIRECTA
@@ -287,8 +167,7 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
                   {member.initials}
                 </div>
               </div>
-            );
-          })}
+            ))}
         </div>
 
       </div>
@@ -349,11 +228,8 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
               </div>
             );
           })}
-
         </div>
-
       </div>
-
     </div>
   );
 }
