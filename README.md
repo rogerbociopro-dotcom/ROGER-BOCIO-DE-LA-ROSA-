@@ -1,20 +1,13 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Juleonix Digital
+**Especialistas en Automatización de Procesos y Arquitectura de Datos.**
 
-# Run and deploy your AI Studio app
+Bienvenido al centro de operaciones técnicas de Juleonix Digital. Nos dedicamos a optimizar flujos de trabajo, saneamiento de datos y soporte técnico empresarial de alta disponibilidad.
 
-This contains everything you need to run your app locally.
+---
+### Servicios:
+- Automatización de procesos (Workflow Automation)
+- Arquitectura de sistemas y datos
+- Soporte técnico SLA
+- Optimización de CRM
 
-View your app in AI Studio: https://ai.studio/apps/2da1bdf4-9db7-476c-906b-11e2e476a515
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Para más información, visita nuestro sitio oficial: [www.juleonixdigital.com](https://www.juleonixdigital.com)
