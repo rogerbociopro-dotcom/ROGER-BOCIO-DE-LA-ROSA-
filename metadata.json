@@ -1,6 +1,6 @@
 {
   "name": "Juleonix Digital",
-  "description": "Consultora de operatividad tecnológica: Expertos en gestión de datos, automatización de procesos, asistencia corporativa y soporte de infraestructura TI empresarial.",
+  "description": "Replica de alta precisión de la plataforma interactiva de Juleonix Digital, que sincroniza tecnología, flujos de datos corporativos, soporte express, asistencia virtual y automatización.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
