@@ -27,7 +27,7 @@ export default function ViewInicio({ setActiveTab }: ViewInicioProps) {
 
         {/* Subtitle */}
         <p className="text-zinc-300 text-xs sm:text-sm md:text-base max-w-3xl mx-auto font-light leading-relaxed text-center px-4">
-          En <strong className="font-medium text-white">Juleonix Digital</strong> diseñamos e implementamos sistemas de Gestión de Datos, Asistencia Virtual, Soporte de TI y Soluciones de Automatización que eliminan ineficiencias de su organización y aceleran el crecimiento.
+          En <strong className="font-medium text-white">Juleonix Digital</strong>, no solo ofrecemos servicios; nos convertimos en el motor operativo y digital de su empresa. Somos una agencia especializada en ayudar a emprendedores, marcas, influencers y negocios nacionales e internacionales a optimizar, automatizar y escalar sus operaciones mediante tecnología de vanguardia y equipos altamente especializados.
         </p>
 
         {/* Dual Actions */}

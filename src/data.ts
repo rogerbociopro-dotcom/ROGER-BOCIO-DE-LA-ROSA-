@@ -1,7 +1,7 @@
 import { ServiceElement, TeamMember, TimelineMilestone, SupportChannel } from './types';
-import avatarRoger from './assets/images/avatar_roger_1780438432223.png';
-import avatarHendry from './assets/images/avatar_hendry_1780438443396.png';
-import avatarJulieta from './assets/images/avatar_julieta_1780438455924.png';
+import avatarRoger from './assets/images/avatar_roger_1779390769535.png';
+import avatarHendry from './assets/images/avatar_hendry_1779390786488.png';
+import avatarJulieta from './assets/images/avatar_julieta_1779390801252.png';
 
 export const SERVICES_DATA: ServiceElement[] = [
   {

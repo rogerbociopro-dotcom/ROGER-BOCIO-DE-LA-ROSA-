@@ -163,59 +163,6 @@ export default function ViewServicios({ setActiveTab }: ViewServiciosProps) {
         </p>
       </div>
 
-      {/* Nueva División: para Influencers y Podcasts */}
-      <div className="space-y-6 px-4 sm:px-6 md:px-8 border-t border-zinc-900/60 pt-10" id="division-influencers-podcasts">
-        <div className="space-y-3 max-w-4xl">
-          <div className="font-mono text-xs text-purple-400 font-bold tracking-widest uppercase">// ESPECIALIZACIÓN CREATIVA Y DE ALCANCE</div>
-          <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-widest uppercase">
-            DIVISIÓN PARA INFLUENCERS Y PODCASTS
-          </h2>
-          <p className="font-sans text-xs text-zinc-400 leading-normal font-light max-w-2xl">
-            Soluciones operativas, creativas y comerciales diseñadas estratégicamente para maximizar el impacto de creadores de contenido, optimizar workflows de publicación y gestionar alianzas corporativas de alto nivel.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-zinc-900 bg-zinc-950/45 p-6 md:p-8 space-y-6 hover:border-purple-500/20 transition-all duration-300 relative group overflow-hidden">
-          {/* Subtle decoration line or gradient */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500/0 via-purple-500/30 to-purple-500/0"></div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { title: "Gestión de redes sociales", desc: "Planificación estratégica de contenidos, moderación activa de comunidades y optimización de interacción." },
-              { title: "Edición profesional de videos", desc: "Formatos dinámicos y de alta retención optimizados para YouTube, TikTok, Shorts y Reels." },
-              { title: "Búsqueda de invitados para podcasts", desc: "Gestión de contactos y coordinación logística con invitados estratégicos y de alto perfil." },
-              { title: "Marketing digital para influencers", desc: "Campañas de visibilidad pagada y orgánica para potenciar creadores y conversiones." },
-              { title: "Gestión de colaboraciones con marcas", desc: "Enlace comercial activo, administración de acuerdos publicitarios y patrocinios de marcas." },
-              { title: "Organización operativa", desc: "Soporte de back-office integrado, calendarios de producción y flujos eficientes de entrega." },
-              { title: "Asistente virtual personalizado", desc: "Delegación ágil de tareas operativas y rutinarias, control de agenda y respuestas inmediatas." },
-              { title: "Negociación y cierre de colaboraciones", desc: "Representación profesional encargada de maximizar el valor de sus acuerdos comerciales y contratos de marca." },
-            ].map((item, index) => (
-              <div key={index} className="flex gap-2.5 items-start p-3 rounded-xl hover:bg-zinc-900/30 transition-colors">
-                <CheckCircle2 className="h-4.5 w-4.5 text-purple-400 shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <h4 className="font-display text-xs font-black text-white uppercase tracking-wider">{item.title}</h4>
-                  <p className="text-[11px] text-zinc-400 font-light leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-6 border-t border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-left">
-              <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase tracking-wider block">// SOPORTE CREATIVO INTEGRAL</span>
-              <p className="font-sans text-[11px] text-zinc-400 font-light mt-0.5">Gestión unificada de redes, edición, patrocinios y logística para creadores de contenido y podcast.</p>
-            </div>
-            
-            <button
-              onClick={() => setActiveTab('CONTACTO')}
-              className="font-mono text-[10px] font-bold text-white bg-purple-600 hover:bg-purple-500 border border-purple-500 px-5 py-3 rounded-lg transition-all uppercase whitespace-nowrap cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] duration-200"
-            >
-              CONTACTAR DIVISIÓN &rarr;
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* 2. Grid of 3 Plan levels: STARTER, SCALE, ELITE */}
       <div className="space-y-6 px-4 sm:px-6 md:px-8 border-t border-zinc-900/60 pt-10">
         <div className="space-y-2 mb-4">
@@ -561,274 +508,56 @@ export default function ViewServicios({ setActiveTab }: ViewServiciosProps) {
 
       </div>
 
-      {/* 3. Consola Operativa Interactiva (Visualizadores & Simuladores) */}
-      <div className="space-y-8 px-4 sm:px-6 md:px-8 border-t border-zinc-900/80 pt-16" id="consola-interactiva-section">
+      {/* Nueva División: para Influencers y Podcasts */}
+      <div className="space-y-6 px-4 sm:px-6 md:px-8 border-t border-zinc-900/60 pt-10" id="division-influencers-podcasts">
         <div className="space-y-3 max-w-4xl">
-          <div className="font-mono text-xs text-pink-500 font-bold tracking-widest uppercase">// CENTRO DE CONTROL DIGITAL</div>
+          <div className="font-mono text-xs text-purple-400 font-bold tracking-widest uppercase">// ESPECIALIZACIÓN CREATIVA Y DE ALCANCE</div>
           <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-widest uppercase">
-            SIMULADOR DE RESPUESTA EN TIEMPO REAL
+            DIVISIÓN PARA INFLUENCERS Y PODCASTS
           </h2>
           <p className="font-sans text-xs text-zinc-400 leading-normal font-light max-w-2xl">
-            Experimente la solidez lógica de nuestra tecnología. Controle y pruebe la interactividad de reconciliación de datos, administración CRM, velocidad ping y canal de Webhooks.
+            Soluciones operativas, creativas y comerciales diseñadas estratégicamente para maximizar el impacto de creadores de contenido, optimizar workflows de publicación y gestionar alianzas corporativas de alto nivel.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" id="consola-simuladores-grid">
+        <div className="rounded-2xl border border-zinc-900 bg-zinc-950/45 p-6 md:p-8 space-y-6 hover:border-purple-500/20 transition-all duration-300 relative group overflow-hidden">
+          {/* Subtle decoration line or gradient */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500/0 via-purple-500/30 to-purple-500/0"></div>
           
-          {/* UTILITY WIDGET 1: Data Matrix Corrector */}
-          <div className="rounded-2xl border border-zinc-900 bg-zinc-950/40 p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-cyan-400" />
-              <h4 className="font-display text-sm font-extrabold text-white uppercase tracking-wider">Corrector de Estructura de Datos</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { title: "Gestión de redes sociales", desc: "Planificación estratégica de contenidos, moderación activa de comunidades y optimización de interacción." },
+              { title: "Edición profesional de videos", desc: "Formatos dinámicos y de alta retención optimizados para YouTube, TikTok, Shorts y Reels." },
+              { title: "Búsqueda de invitados para podcasts", desc: "Gestión de contactos y coordinación logística con invitados estratégicos y de alto perfil." },
+              { title: "Marketing digital para influencers", desc: "Campañas de visibilidad pagada y orgánica para potenciar creadores y conversiones." },
+              { title: "Gestión de colaboraciones con marcas", desc: "Enlace comercial activo, administración de acuerdos publicitarios y patrocinios de marcas." },
+              { title: "Organización operativa", desc: "Soporte de back-office integrado, calendarios de producción y flujos eficientes de entrega." },
+              { title: "Asistente virtual personalizado", desc: "Delegación ágil de tareas operativas y rutinarias, control de agenda y respuestas inmediatas." },
+              { title: "Negociación y cierre de colaboraciones", desc: "Representación profesional encargada de maximizar el valor de sus acuerdos comerciales y contratos de marca." },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-2.5 items-start p-3 rounded-xl hover:bg-zinc-900/30 transition-colors">
+                <CheckCircle2 className="h-4.5 w-4.5 text-purple-400 shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <h4 className="font-display text-xs font-black text-white uppercase tracking-wider">{item.title}</h4>
+                  <p className="text-[11px] text-zinc-400 font-light leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-6 border-t border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-left">
+              <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase tracking-wider block">// SOPORTE CREATIVO INTEGRAL</span>
+              <p className="font-sans text-[11px] text-zinc-400 font-light mt-0.5">Gestión unificada de redes, edición, patrocinios y logística para creadores de contenido y podcast.</p>
             </div>
             
-            <div className="rounded-xl border border-zinc-900 bg-black/95 p-4 space-y-3.5">
-              <div className="flex items-center justify-between border-b border-zinc-900 pb-2">
-                <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">CONSOLA DE SANEAMIENTO / PRUEBA DE FLUX</span>
-                <span className={`font-mono text-[9px] px-1.5 py-0.5 rounded font-black ${
-                  dataAuditStatus === 'clean' ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/35' : 'bg-pink-950 text-pink-500 border border-pink-500/35'
-                }`}>
-                  {dataAuditStatus === 'clean' ? 'CORRECTOR_PASSED' : 'ERROR_DETECTED'}
-                </span>
-              </div>
-
-              <div className="space-y-2 font-mono text-[10px]" id="audit-items-container">
-                <div className="flex justify-between items-center py-1 border-b border-zinc-900/40">
-                  <span className="text-zinc-500">Procesamiento Ingesta</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] text-zinc-600">XLS_VAL_0</span>
-                    <span className="text-[#00f0ff] font-bold">Optimizando</span>
-                  </div>
-                </div>
-                
-                <div className="flex justify-between items-center py-1 border-b border-zinc-900/40">
-                  <span className="text-zinc-500">KPI Analytics Dashboard</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] text-zinc-600">DB_SINC_1</span>
-                    <span className="text-emerald-400 font-bold">En Línea</span>
-                  </div>
-                </div>
-
-                {/* Clickable Toggle Row */}
-                <div 
-                  onClick={handleFixAudit}
-                  className="flex justify-between items-center py-1.5 px-2 rounded bg-zinc-950 hover:bg-zinc-900 border border-zinc-900 hover:border-zinc-800 cursor-pointer transition-all group"
-                >
-                  <span className="text-zinc-400 group-hover:text-white transition-colors">Auditoría Data Entry</span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] text-zinc-650 font-mono">AUD_ZERO_ERR</span>
-                    {dataAuditStatus === 'error' && (
-                      <span className="text-pink-500 font-bold hover:underline">Clic para corregir</span>
-                    )}
-                    {dataAuditStatus === 'correcting' && (
-                      <span className="text-cyan-400 animate-pulse font-bold">Sanitizando...</span>
-                    )}
-                    {dataAuditStatus === 'clean' && (
-                      <span className="text-emerald-400 font-bold">Sin Errores (Recalibrar)</span>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Logging status console */}
-              <div className="rounded bg-zinc-950 p-2 font-mono text-[10px] text-zinc-500 flex gap-2 items-start border border-zinc-900">
-                <Terminal className="h-3.5 w-3.5 text-zinc-600 shrink-0 mt-0.5" />
-                <p className="leading-tight">{dataAuditLog}</p>
-              </div>
-            </div>
+            <button
+              onClick={() => setActiveTab('CONTACTO')}
+              className="font-mono text-[10px] font-bold text-white bg-purple-600 hover:bg-purple-500 border border-purple-500 px-5 py-3 rounded-lg transition-all uppercase whitespace-nowrap cursor-pointer hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] duration-200"
+            >
+              CONTACTAR DIVISIÓN &rarr;
+            </button>
           </div>
-
-          {/* UTILITY WIDGET 2: Active Tasks CRM checklist */}
-          <div className="rounded-2xl border border-zinc-900 bg-zinc-950/40 p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <Briefcase className="h-4 w-4 text-pink-500" />
-              <h4 className="font-display text-sm font-extrabold text-white uppercase tracking-wider">Administrador de Tareas CRM</h4>
-            </div>
-
-            <div className="rounded-xl border border-zinc-900 bg-black/95 p-4 space-y-3.5">
-              <div className="flex items-center justify-between border-b border-zinc-900 pb-2">
-                <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">GESTIÓN DE LEADS ACTIVOS</span>
-                <button 
-                  onClick={handleClearDoneTasks}
-                  className="font-mono text-[9px] text-pink-500 font-semibold hover:text-white flex items-center gap-1 bg-zinc-950 border border-zinc-900 hover:border-pink-500/30 px-2 py-0.5 rounded cursor-pointer transition-colors"
-                  id="complete-crm-btn"
-                >
-                  SINC_CRM_CAMPO
-                </button>
-              </div>
-
-              {/* List */}
-              <div className="space-y-1.5 animate-fadeIn" id="crm-tasks-container">
-                {crmTasks.map((task) => (
-                  <div 
-                    key={task.id}
-                    onClick={() => handleToggleTask(task.id)}
-                    className={`flex items-center justify-between p-2 rounded border transition-all cursor-pointer ${
-                      task.done 
-                        ? 'bg-zinc-950/40 border-zinc-900/60 line-through text-zinc-600' 
-                        : 'bg-zinc-950 border-zinc-900 hover:border-zinc-800 text-zinc-300'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className={`h-4 w-4 rounded border flex items-center justify-center transition-all ${
-                        task.done ? 'bg-pink-500/20 border-pink-500/80 text-pink-400' : 'border-zinc-850 text-transparent'
-                      }`}>
-                        <Check className="h-3 w-3" />
-                      </div>
-                      <span className="font-sans text-xs">{task.text}</span>
-                    </div>
-                    <span className="font-mono text-[9px] text-zinc-600">{task.time}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Form to add mock task */}
-              <form onSubmit={handleAddTask} className="flex gap-2">
-                <input 
-                  type="text" 
-                  placeholder="Insertar nueva tarea remota..."
-                  value={newTaskText}
-                  onChange={(e) => setNewTaskText(e.target.value)}
-                  className="flex-1 bg-zinc-950 border border-zinc-900 outline-none text-xs font-sans px-3 py-1.5 rounded text-white placeholder-zinc-600 focus:border-pink-500/40"
-                />
-                <button 
-                  type="submit"
-                  className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-850 hover:border-zinc-700 text-white p-1.5 rounded cursor-pointer hover:text-pink-400 transition-colors shrink-0"
-                >
-                  <Plus className="h-4 w-4" />
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* UTILITY WIDGET 3: Latency Ping Probar */}
-          <div className="rounded-2xl border border-zinc-900 bg-zinc-950/40 p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <Settings className="h-4 w-4 text-purple-400" />
-              <h4 className="font-display text-sm font-extrabold text-white uppercase tracking-wider">Test de Latencia de Infraestructura IT</h4>
-            </div>
-
-            <div className="rounded-xl border border-zinc-900 bg-black/95 p-4 space-y-3.5" id="ping-widget-root">
-              <div className="flex items-center justify-between border-b border-zinc-900 pb-2">
-                <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">TELEMETRÍA RED JULEONIX</span>
-                <button 
-                  onClick={handleProbarPing}
-                  disabled={pinging}
-                  className="font-mono text-[9px] text-purple-400 font-semibold hover:text-white flex items-center gap-1 bg-zinc-950 hover:bg-zinc-900 border border-zinc-900 hover:border-purple-500/40 px-2 py-0.5 rounded cursor-pointer disabled:opacity-50 transition-colors"
-                  id="probar-ping-btn"
-                >
-                  <Activity className={`h-3 w-3 ${pinging ? 'animate-bounce' : ''}`} />
-                  TEST_SLA_PING
-                </button>
-              </div>
-
-              <div className="space-y-2 font-mono text-[10px]">
-                <div className="flex justify-between items-center py-1 border-b border-zinc-900/40">
-                  <span className="text-zinc-500">Firewall de Servidores</span>
-                  <div className="flex items-center gap-3">
-                    <span className={`${pinging ? 'animate-pulse text-zinc-550' : 'text-purple-450'} font-bold`}>
-                      {pinging ? '...' : `${pings.firewall}ms`}
-                    </span>
-                    <span className="px-1.5 py-0.2 rounded text-[8px] bg-emerald-950/80 text-emerald-400 border border-emerald-900 font-medium">Protección OK</span>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center py-1 border-b border-zinc-900/40">
-                  <span className="text-zinc-500">Nube Cloud Backups</span>
-                  <div className="flex items-center gap-3">
-                    <span className={`${pinging ? 'animate-pulse text-zinc-550' : 'text-purple-450'} font-bold`}>
-                      {pinging ? '...' : `${pings.backup}ms`}
-                    </span>
-                    <span className="px-1.5 py-0.2 rounded text-[8px] bg-emerald-950/80 text-emerald-400 border border-emerald-900 font-medium font-mono">Resguardo Listo</span>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center py-1">
-                  <span className="text-zinc-500">Sistemas Internos VPN</span>
-                  <div className="flex items-center gap-3">
-                    <span className={`${pinging ? 'animate-pulse text-zinc-550' : 'text-purple-450'} font-bold`}>
-                      {pinging ? '...' : `${pings.vpn}ms`}
-                    </span>
-                    <span className="px-1.5 py-0.2 rounded text-[8px] bg-emerald-950/80 text-emerald-400 border border-emerald-900 font-medium">Estabilidad Alta</span>
-                  </div>
-                </div>
-              </div>
-
-              {pinging && (
-                <div className="h-1 w-full bg-zinc-950 rounded overflow-hidden relative">
-                  <div className="h-full bg-gradient-to-r from-purple-400 to-pink-500 absolute top-0 left-0 w-1/3 animate-ping-progress" style={{
-                    animation: 'ping-progress 1.2s infinite'
-                  }} />
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* UTILITY WIDGET 4: Webhook Pipeline Visualizer */}
-          <div className="rounded-2xl border border-zinc-900 bg-zinc-950/40 p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <Database className="h-4 w-4 text-cyan-400" />
-              <h4 className="font-display text-sm font-extrabold text-white uppercase tracking-wider">Integración de Flujos & Webhooks</h4>
-            </div>
-
-            <div className="rounded-xl border border-zinc-900 bg-black/95 p-4 space-y-3">
-              <div className="flex items-center justify-between border-b border-zinc-900 pb-2">
-                <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">DIRECCIÓN DE CAPTURA API</span>
-                <button 
-                  onClick={triggerPipelineMockEvent}
-                  className="font-mono text-[9px] text-[#00f0ff] font-semibold hover:text-white flex items-center gap-1 bg-zinc-950 hover:bg-zinc-900 border border-zinc-900 hover:border-cyan-500/40 px-2 py-0.5 rounded cursor-pointer transition-colors"
-                  id="run-pipeline-btn"
-                >
-                  TEST_API_TRIGGER
-                </button>
-              </div>
-
-              {/* Graphical flow rendering matching screenshot */}
-              <div className="flex flex-wrap items-center justify-center gap-2 py-2 font-mono text-[9px] font-bold text-center" id="workflow-visualizer">
-                <div className={`px-2.5 py-1.5 rounded transition-all border ${
-                  activeStep === 'webhook' 
-                    ? 'bg-cyan-950/60 border-cyan-400 text-white shadow-md shadow-cyan-400/10' 
-                    : 'bg-zinc-950 border-zinc-900 text-zinc-500'
-                }`}>
-                  [WEBHOOK]
-                </div>
-                
-                <span className="text-zinc-700 select-none">&rarr;</span>
-                
-                <div className={`px-2.5 py-1.5 rounded transition-all border ${
-                  activeStep === 'filtering' 
-                    ? 'bg-[#1b1c2e] border-pink-400 text-white shadow-md shadow-pink-400/10' 
-                    : 'bg-zinc-950 border-zinc-900 text-zinc-500'
-                }`}>
-                  [VALIDACIÓN CRM]
-                </div>
-                
-                <span className="text-zinc-700 select-none">&rarr;</span>
-                
-                <div className={`px-2.5 py-1.5 rounded transition-all border ${
-                  activeStep === 'crm' 
-                    ? 'bg-emerald-950/60 border-emerald-400 text-white shadow-md shadow-emerald-400/10' 
-                    : 'bg-zinc-950 border-zinc-900 text-zinc-500'
-                }`}>
-                  [CRM SYNC]
-                </div>
-              </div>
-
-              {/* Micro active details */}
-              <div className="flex justify-between items-center text-[8px] text-zinc-500 font-mono border-t border-zinc-900/60 pt-2 font-semibold">
-                <span>ESTADO: SINCRONIZADO / 100% OK</span>
-                <span className="text-emerald-400">ACTIVO VIA API</span>
-              </div>
-
-              {/* Logs frame */}
-              <div className="rounded bg-zinc-950 p-2 border border-zinc-900 max-h-[70px] overflow-y-auto space-y-1 font-mono text-[9px]">
-                {pipelineLogs.map((log, idx) => (
-                  <div key={idx} className={`${idx === 0 ? 'text-zinc-300' : 'text-zinc-650'}`}>{log}</div>
-                ))}
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
