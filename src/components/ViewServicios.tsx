@@ -249,12 +249,14 @@ export default function ViewServicios({ setActiveTab }: ViewServiciosProps) {
             
             <div className="pt-4 border-t border-zinc-900/60 flex items-center justify-between">
               <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">SOPORTE BÁSICO INCLUIDO</span>
-              <button
-                onClick={() => setActiveTab('CONTACTO')}
+              <a
+                href="https://wa.me/message/AMNIPYTYFMYCE1?text=Hola,%20me%20interesa%20cotizar%20el%20Starter%20Plan%20de%20Juleonix%20Digital."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[10px] font-mono font-bold text-cyan-400 hover:underline transition-all flex items-center gap-1"
               >
                 COTIZAR ESTE &rarr;
-              </button>
+              </a>
             </div>
           </div>
 
@@ -353,12 +355,14 @@ export default function ViewServicios({ setActiveTab }: ViewServiciosProps) {
 
             <div className="pt-4 border-t border-zinc-900/60 flex items-center justify-between">
               <span className="font-mono text-[9px] text-zinc-500 font-bold uppercase">SISTEMAS INTEGRALES</span>
-              <button
-                onClick={() => setActiveTab('CONTACTO')}
+              <a
+                href="https://wa.me/message/AMNIPYTYFMYCE1?text=Hola,%20me%20interesa%20cotizar%20el%20Scale%20Plan%20de%20Juleonix%20Digital."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[10px] font-mono font-bold text-pink-500 hover:underline transition-all flex items-center gap-1"
               >
                 COTIZAR ESTE &rarr;
-              </button>
+              </a>
             </div>
           </div>
 
@@ -476,12 +480,14 @@ export default function ViewServicios({ setActiveTab }: ViewServiciosProps) {
 
             <div className="pt-4 border-t border-zinc-800 flex items-center justify-between">
               <span className="font-mono text-[9px] text-zinc-450 font-bold uppercase">ALTA DISPONIBILIDAD</span>
-              <button
-                onClick={() => setActiveTab('CONTACTO')}
+              <a
+                href="https://wa.me/message/AMNIPYTYFMYCE1?text=Hola,%20me%20interesa%20cotizar%20el%20Elite%20Plan%20de%20Juleonix%20Digital."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[10px] font-mono font-bold text-purple-400 hover:underline transition-all flex items-center gap-1"
               >
                 COTIZAR ESTE &rarr;
-              </button>
+              </a>
             </div>
           </div>
 
