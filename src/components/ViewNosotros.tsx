@@ -124,62 +124,67 @@ export default function ViewNosotros({ setActiveTab }: ViewNosotrosProps) {
             return (
               <div 
                 key={member.id}
-                className="group relative rounded-2xl border bg-zinc-950/60 p-5 flex flex-col justify-between hover:border-cyan-500/25 border-zinc-900 transition-all duration-350"
+                className="group relative rounded-2xl border bg-zinc-950/60 p-6 flex flex-col justify-between hover:border-cyan-500/25 border-zinc-900 transition-all duration-350"
               >
-                <div className="space-y-4">
+                <div>
                   
-                  {/* Aspect-Ratio Photo Space */}
-                  <div 
-                    className="relative aspect-[4/3] w-full rounded-xl bg-zinc-900/60 border border-zinc-800/80 overflow-hidden select-none transition-all duration-300"
-                    id={`photo-space-${member.id}`}
-                  >
-                    {member.avatar ? (
-                      <img 
-                        src={member.avatar} 
-                        alt={member.name} 
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                        referrerPolicy="no-referrer"
-                      />
-                    ) : (
-                      <div className="text-center space-y-2 p-4">
-                        <div className="h-12 w-12 rounded-full mx-auto bg-gradient-to-tr from-[#151528] to-[#251025] flex items-center justify-center font-display text-base font-bold text-white">
+                  {/* High-Fidelity SQUIRCLE Avatar Initials Container */}
+                  <div className="relative p-[1.5px] rounded-2xl bg-gradient-to-br from-[#00f0ff] via-[#9a00ff]/50 to-[#ff007f] w-14 h-14 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.15)] group-hover:shadow-[0_0_20px_rgba(255,0,127,0.25)] transition-all duration-300 mb-5">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00f0ff]/20 to-[#ff007f]/20 blur-[4px] rounded-2xl opacity-60" />
+                    <div className="relative w-full h-full rounded-[14px] bg-[#0c0c12] flex items-center justify-center border border-zinc-800/40 overflow-hidden">
+                      {member.avatar ? (
+                        <img 
+                          src={member.avatar} 
+                          alt={member.name} 
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          referrerPolicy="no-referrer"
+                        />
+                      ) : (
+                        <span className="font-display text-sm tracking-wider font-extrabold text-white">
                           {member.initials}
-                        </div>
-                        <p className="font-mono text-[9px] text-zinc-500 font-bold uppercase tracking-wider">
-                          Sin foto cargada
-                        </p>
-                      </div>
-                    )}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Name and cargo / role placed directly below the photo */}
-                  <div className="space-y-1 pt-1">
-                    <h4 className="font-display text-base font-extrabold text-white tracking-wide group-hover:text-cyan-400 transition-colors">
+                  {/* Name and role */}
+                  <div className="space-y-1 select-none">
+                    <h4 className="font-display text-base font-extrabold text-white tracking-wide uppercase transition-colors duration-300 group-hover:text-cyan-400">
                       {member.name}
                     </h4>
-                    <p className="font-mono text-[9px] text-pink-500 font-bold tracking-wider uppercase">
+                    <p className="font-mono text-[9px] text-[#ff007f] font-bold tracking-widest uppercase">
                       {member.role}
                     </p>
                   </div>
 
-                  {/* Specialty and details below names/cargos */}
-                  <div className="border-t border-zinc-900 pt-3 space-y-1">
-                    <span className="font-mono text-[8px] text-zinc-500 font-bold tracking-widest uppercase block">
-                      ESPECIALIDAD DIRECTA
-                    </span>
-                    <span className="font-sans text-xs font-semibold text-white">
-                      {member.specialty}
-                    </span>
+                  {/* Specialty and details with divider */}
+                  <div className="border-t border-zinc-900/80 pt-4 mt-4 space-y-3">
+                    <div>
+                      <span className="font-mono text-[8px] text-zinc-500 font-bold tracking-widest uppercase block leading-none">
+                        ESPECIALIDAD DIRECTA
+                      </span>
+                      <span className="font-sans text-xs sm:text-sm font-semibold text-white block mt-1">
+                        {member.specialty}
+                      </span>
+                    </div>
+
+                    <p className="font-sans text-xs text-zinc-400 font-light leading-relaxed text-justify">
+                      {member.desc}
+                    </p>
                   </div>
 
-                  <p className="font-sans text-xs text-zinc-400 font-light leading-relaxed text-left text-justify">
-                    {member.desc}
-                  </p>
                 </div>
 
-                <div className="absolute bottom-5 right-5 text-zinc-900/60 font-mono text-2xl font-black group-hover:text-[#00f0ff]/10 select-none transition-colors">
-                  {member.initials}
+                {/* Card Footer with bottom divider */}
+                <div className="border-t border-zinc-900/80 pt-4 mt-6 flex items-center justify-between">
+                  <span className="font-mono text-[8px] text-zinc-500 font-bold tracking-widest uppercase">
+                    JULEONIX CORE STAFF
+                  </span>
+                  <span className="font-mono text-[8px] text-zinc-400 font-bold tracking-widest uppercase flex items-center gap-1">
+                    ACTIVO <span className="text-cyan-400">✓</span>
+                  </span>
                 </div>
+
               </div>
             );
           })}
